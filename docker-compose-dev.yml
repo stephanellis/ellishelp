@@ -3,6 +3,8 @@ services:
   web:
     build: .
     image: dev/ellishelp
+    volumes:
+      - .:/opt/ellishelp:Z
     labels:
       - "traefik.backend=ellishelp"
       - "traefik.frontend.rule=Host:ellishelp.com, www.ellishelp.com"
